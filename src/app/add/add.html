@@ -1,1 +1,18 @@
-<h1>Add</h1>
+<div layout="column" layout-fill layout-margin layout-padding layout-align="center center">
+  <md-content layout-fill>
+    <form name="add-gif">
+      <md-input-container>
+        <label>Title</label>
+        <input name="title" ng-model="add.title">
+      </md-input-container>
+      <md-input-container>
+        <label>URL</label>
+        <input name="url" ng-model="add.url">
+      </md-input-container>
+    </form>
+  </md-content>
+
+  <md-button class="md-raised md-primary" ng-click="add.save()" layout-fill>Save</md-button>
+
+  <p class="error">{{add.validationMessage}}</p>
+</div>
