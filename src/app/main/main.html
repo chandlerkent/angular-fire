@@ -1,4 +1,9 @@
 <div layout="column" layout-fill>
-  <h1>{{main.message}}</h1>
-  <input ng-model="main.message" type="text" />
+  <section layout="row" layout-align="center center" layout-fill>
+    <md-button class="md-primary" ui-sref="app.latest" ui-sref-active="active">Latest GIFs</md-button>
+    <md-button class="md-primary" ui-sref="app.top" ui-sref-active="active">Top GIFs</md-button>
+    <md-button class="md-primary" ui-sref="app.add" ui-sref-active="active">+ Add GIF</md-button>
+  </section>
+
+  <md-content ui-view></md-content>
 </div>
