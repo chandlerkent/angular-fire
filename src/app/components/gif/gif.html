@@ -1,0 +1,18 @@
+<md-whiteframe class="md-whiteframe-z2" layout="column" layout-align="center center" layout-padding layout-margin>
+	<h3 class="md-subhead" layout="column" layout-align="center center">
+		{{vm.gif.title}}
+	</h3>
+
+	<a ng-href="{{vm.gif.url}}" target="_blank">
+		<img ng-src="{{vm.gif.url}}" ng-alt="{{vm.gif.title}}" class="restrict light-border">
+	</a>
+
+	<div layout="row" layout-fill layout-align="start center" layout-padding>
+		<div flex>
+			<a ng-click="vm.toggleFavorite()">
+				<md-icon ng-class="{ isFavorite: vm.isFavorited }">{{vm.favoriteIcon()}}</md-icon>
+			</a>
+			<span> {{vm.gif.favorites}} favorites</span>
+		</div>
+	</div>
+</md-whiteframe>

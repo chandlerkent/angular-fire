@@ -11,6 +11,9 @@ import TopController from './top/top.controller';
 import AddController from './add/add.controller';
 
 import GifService from './models/gif.service';
+import UserService from './models/user.service';
+
+import GifDirective from './components/gif/gif.directive';
 
 angular.module('gifs', ['ngTouch', 'ui.router', 'ngMaterial', 'firebase'])
   .constant('moment', moment)
@@ -18,6 +21,8 @@ angular.module('gifs', ['ngTouch', 'ui.router', 'ngMaterial', 'firebase'])
   .config(routerConfig)
   .run(runBlock)
   .service('GifService', GifService)
+  .service('UserService', UserService)
+  .directive('gifView', () => new GifDirective())
   .controller('MainController', MainController)
   .controller('LatestController', LatestController)
   .controller('TopController', TopController)
