@@ -3,8 +3,10 @@
 const FIREBASE_URL = 'https://blazing-heat-9444.firebaseio.com';
 
 class GifService {
-  constructor () {
+  constructor ($firebaseArray) {
     'ngInject';
+
+    this.$firebaseArray = $firebaseArray;
 
     this.gifStore = new Firebase(FIREBASE_URL + '/gifs');
   }
@@ -20,6 +22,11 @@ class GifService {
     };
 
     this.gifStore.push(gif);
+  }
+
+  getLatestGifs() {
+    let query = this.gifStore.orderByChild('createdAtDesc').limitToLast(25);
+    return this.$firebaseArray(query);
   }
 }
 

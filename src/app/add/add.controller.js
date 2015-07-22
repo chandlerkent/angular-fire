@@ -1,7 +1,8 @@
 class AddController {
-  constructor (GifService) {
+  constructor ($state, GifService) {
     'ngInject';
 
+    this.$state = $state;
     this.GifService = GifService;
 
     this.title = '';
@@ -14,6 +15,7 @@ class AddController {
     this.isValid = this.validate();
     if (this.isValid) {
       this.GifService.createGif(this.title, this.url);
+      this.$state.go('app.latest');
     }
   }
 

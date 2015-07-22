@@ -1,1 +1,13 @@
-<h1>Latest</h1>
+<div layout-sm="column" layout-gt-sm="row" layout-align="center" layout-padding layout-wrap>
+	<div ng-repeat="gif in latest.gifs">
+		<md-whiteframe class="md-whiteframe-z2" layout="column" layout-align="center center" layout-padding layout-margin>
+			<h3 class="md-subhead" layout="column" layout-align="center center">
+				{{gif.title}}
+			</h3>
+
+			<a ng-href="{{gif.url}}" target="_blank">
+				<img ng-src="{{gif.url}}" ng-alt="{{gif.title}}" class="restrict light-border">
+			</a>
+		</md-whiteframe>
+	</div>
+</div>

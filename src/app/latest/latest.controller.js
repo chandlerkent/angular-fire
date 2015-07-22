@@ -1,6 +1,8 @@
 class LatestController {
-  constructor () {
+  constructor (GifService) {
     'ngInject';
+
+    this.gifs = GifService.getLatestGifs();
   }
 }
 
