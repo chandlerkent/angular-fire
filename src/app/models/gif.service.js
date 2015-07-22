@@ -36,6 +36,11 @@ class GifService {
     return this.$firebaseArray(query);
   }
 
+  getTopGifs() {
+    let query = this.gifStore.orderByChild('favoritesDesc').endAt(-1).limitToLast(25);
+    return this.$firebaseArray(query);
+  }
+
   toggleFavorite(gif) {
     var ref = this.getGifReference(gif);
 

@@ -1,6 +1,8 @@
 class TopController {
-  constructor () {
+  constructor (GifService) {
     'ngInject';
+
+    this.gifs = GifService.getTopGifs();
   }
 }
 
